@@ -1,0 +1,12 @@
+{
+  "name": "AXONOVA · Detección temprana del neurodesarrollo",
+  "short_name": "AXONOVA",
+  "description": "Detección temprana del neurodesarrollo infantil en el Perú",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EEF2ED",
+  "theme_color": "#1F5C56",
+  "icons": [
+    { "src": "/owl-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

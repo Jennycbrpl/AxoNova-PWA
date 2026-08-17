@@ -88,4 +88,4 @@ export const CUESTIONARIOS = {
 };
 
 export const NOTA_JURADO_HABILIDADES =
-  'Trabajamos con la Lista de habilidades y conductas esperadas por edad del niño de 4 a 11 años, 11 meses y 29 días. Por alcance del MVP, implementamos 3 checkpoints representativos de ese rango — 4, 5 y 8 años — en vez de los ~96 meses que cubre la lista oficial completa.';
+  'De 0 a 36 meses trabajamos con el Test de Desarrollo Psicomotor (Huanca), con un checkpoint completo en cada control CRED oficial (0, 3, 6, 9, 12, 18, 24, 30 y 36 meses). De 4 a 11 años, 11 meses y 29 días usamos la Lista de habilidades y conductas esperadas por edad del niño; por alcance del MVP, implementamos 3 checkpoints representativos de ese rango — 4, 5 y 8 años — en vez de los ~96 meses que cubre la lista oficial completa.';

@@ -47,7 +47,7 @@ export function lookupAseguramiento(dni) {
   return 'Sin seguro';
 }
 export function accedeTeleconsulta(menor) {
-  return (menor.aseguramiento === 'SIS' || menor.aseguramiento === 'EsSalud') && !!menor.tieneSmartphone;
+  return menor.aseguramiento === 'EsSalud' && !!menor.tieneSmartphone;
 }
 
 /* ---------------------------------------------------------

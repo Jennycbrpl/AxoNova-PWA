@@ -26,6 +26,7 @@
     @apply outline outline-2 outline-teal/50 outline-offset-1 border-teal/50 bg-white;
   }
   .field-hint { @apply text-[13px] text-ink-soft mt-2; }
+  .field-fixed { @apply w-full text-[14.5px] px-3.5 py-2.5 border border-line rounded-[10px] bg-teal-soft text-teal-deep font-semibold; }
   .eyebrow { @apply font-roboto text-[11px] tracking-[.08em] uppercase text-teal flex items-center gap-2 mb-1.5 font-medium; }
   .q-opt { @apply flex-1 text-center py-3 border border-line rounded-2xl cursor-pointer text-[15px] font-semibold text-ink-soft bg-white/60 backdrop-blur-md transition-all hover:border-teal/30 hover:bg-white; }
   .q-opt.selected-yes { @apply bg-sage-soft/80 border-sage text-[#248A3D] shadow-sm; }

@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BackLink from '../../components/BackLink';
 import { useAxonovaStore } from '../../store/useAxonovaStore';
 import { DOCTORES } from '../../data/doctores';
-import { especialidadSugerida } from '../../data/recursos';
+
+const ESPECIALIDAD_FIJA = 'Pediatría';
 
 export default function Teleconsulta() {
   const navigate = useNavigate();
@@ -12,20 +13,13 @@ export default function Teleconsulta() {
   const confirmarCita = useAxonovaStore((s) => s.confirmarCita);
   const getCitasOcupadas = useAxonovaStore((s) => s.getCitasOcupadas);
 
-  const especialidades = useMemo(() => Array.from(new Set(DOCTORES.map((d) => d.especialidad))), []);
   const detectados = resultado ? [...(resultado.dominios || []), ...(resultado.regresion || [])] : [];
-  const [especialidad, setEspecialidad] = useState(especialidadSugerida(detectados));
-  const doctoresEsp = DOCTORES.filter((d) => d.especialidad === especialidad);
+  const doctoresEsp = DOCTORES.filter((d) => d.especialidad === ESPECIALIDAD_FIJA);
   const [doctorId, setDoctorId] = useState(doctoresEsp[0]?.id || '');
   const [slot, setSlot] = useState('');
   const [ocupados, setOcupados] = useState(new Set());
 
   useEffect(() => { setOcupados(getCitasOcupadas()); }, []);
-  useEffect(() => {
-    const lista = DOCTORES.filter((d) => d.especialidad === especialidad);
-    setDoctorId(lista[0]?.id || '');
-    setSlot('');
-  }, [especialidad]);
 
   const doctor = DOCTORES.find((d) => d.id === doctorId);
   const libres = doctor ? doctor.slots.filter((s) => !ocupados.has(`${doctor.id}|${s.split('|')[0]}|${s.split('|')[1]}`)) : [];
@@ -47,9 +41,7 @@ export default function Teleconsulta() {
       <div className="card max-w-[480px] mt-2">
         <div className="field mb-4">
           <label>Especialidad</label>
-          <select value={especialidad} onChange={(e) => setEspecialidad(e.target.value)}>
-            {especialidades.map((e) => <option key={e}>{e}</option>)}
-          </select>
+          <div className="field-fixed">Pediatría</div>
         </div>
         <div className="field mb-4">
           <label>Profesional</label>

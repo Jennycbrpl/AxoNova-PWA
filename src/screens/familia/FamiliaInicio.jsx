@@ -37,8 +37,9 @@ export default function FamiliaInicio() {
       <form className="card max-w-[480px]" onSubmit={handleSubmit}>
         <div className="field mb-4">
           <label>DNI del menor</label>
-          <input maxLength={8} placeholder="Ej. 88888888" value={familia.dniMenor} onChange={(e) => setFamiliaField('dniMenor', e.target.value)} />
+         <input maxLength={8} placeholder="Ej. 88888888" value={familia.dniMenor} onChange={(e) => setFamiliaField('dniMenor', e.target.value)} />
           <div className="field-hint">Lo usamos para verificar si cuenta con SIS, EsSalud o seguro privado.</div>
+          <div className="field-hint"><strong>Nota para el jurado:</strong> el seguro se simula según el último dígito del DNI — termina en 4, 5 o 6 para probar el flujo de teleconsulta con EsSalud (con smartphone marcado en "Sí").</div>
         </div>
         <div className="field mb-4">
           <label>Fecha de nacimiento del menor</label>
